@@ -88,7 +88,7 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    // font: inherit;
     vertical-align: baseline;
 }
 
@@ -136,10 +136,11 @@ table {
     border-spacing: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 * {
-    box-sizing: border-box;
-}
-
-a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }
