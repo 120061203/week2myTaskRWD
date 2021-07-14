@@ -31,29 +31,46 @@
         em {
             display: none;
             @include mobile {
-                display: block;
+                display: inline-block;
+                margin: 0 auto;
+                width: 16px;
+                height: 16px;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 5px;
+                right: 15px;
+                font-size: 12px;
                 color: white;
                 background-color: red;
-                border-radius: 100%;
+                border-radius: 7px;
+                text-align: center;
             }
-        }
-    }
-    .mobile-none {
-        @include mobile {
-            display: none;
         }
     }
 }
 
+.mobile-none {
+    @include mobile {
+        display: none;
+    }
+}
+
+.mobile-show {
+    display: none;
+    @include mobile {
+        display: block;
+    }
+}
+
 .banner {
-    height: 500px;
+    height: 870px;
     background: url(../images/index1.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
+    @include mobile {
+        height: 480px;
+        background-position: center center;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +80,11 @@
         right: 15%;
         width: 20%;
         color: white;
+        @include mobile {
+            padding: 0 15px;
+            width: 100%;
+            right: 0;
+        }
         h2 {
             font-size: 1.5rem;
             font-weight: bold;
@@ -89,7 +111,7 @@
     align-items: center;
     transition: .3s;
     &:hover {
-        width: 100%;
+        // width: 100%;
         transition: .3s;
         background-color: rgba(255, 255, 255, .1);
     }
@@ -105,6 +127,7 @@
     border: 2px solid black;
     font-size: 15px;
     font-weight: bold;
+    width: 100%;
     &:hover {
         background-color: rgba(0, 0, 0, .1);
     }
@@ -122,10 +145,17 @@
     padding-bottom: 50px;
     li {
         display: flex;
+        flex-wrap: wrap;
         // background-color: red;
+        @include mobile {
+            flex-direction: column-reverse;
+        }
     }
     li.row-reverse {
         flex-direction: row-reverse;
+        @include mobile {
+            flex-direction: column-reverse;
+        }
     }
     .product__content {
         max-width: 50%;
@@ -135,10 +165,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include mobile {
+            max-width: 100%;
+        }
         .content__inner {
             display: inline-block;
             max-width: 50%;
             // background-color: red;
+            @include mobile {
+                max-width: 100%;
+                margin-top: 8px;
+                margin-bottom: 32px;
+            }
         }
         .content__inner2 {
             display: inline-block;
@@ -166,6 +204,9 @@
     .product__img {
         max-width: 50%;
         // background-color: red;
+        @include mobile {
+            max-width: 100%;
+        }
         img {
             // max-width: 550px;
             // height: 550px;
@@ -175,6 +216,9 @@
     .double-height {
         img {
             height: 1080px;
+            @include mobile {
+                height: 680px;
+            }
         }
     }
 }
@@ -184,16 +228,34 @@
     background-color: #e0e0e0;
     ul {
         display: flex;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        max-width: 100%;
+        margin: 0 auto;
+        // background-color: red;
+        justify-content: space-between;
+        @include mobile {
+            flex-wrap: wrap;
+        }
         li {
-            margin: 50px 15px;
+            margin: 24px 15px;
             // background-color: red;
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+            }
         }
         a {
             display: block;
             max-width: 350px;
+            width: 100%;
             height: auto;
             // background-color: red;
             margin-bottom: 10px;
+            position: relative; //讓before可以抓到高度
+            @include mobile {
+                // max-height: 350px;
+            }
         }
         a.soldOut::before {
             content: "Sold Out";
@@ -202,13 +264,8 @@
             justify-content: center;
             align-items: center;
             font-size: 1.5rem;
-            // top: 0;
-            // max-width: 30%;
-            // max-width: inherit;
-            width: calc(33.33333% - 40px);
-            max-width: 340px;
-            // max-height: 524px;
-            // height: 60%;
+            width: 100%;
+            height: 100%;
             color: white;
             background-color: rgba(0, 0, 0, .3);
             z-index: 2;
@@ -235,25 +292,37 @@
 }
 
 .product__img2 {
-    // width: 50%;
+    width: 50%;
     // max-width: 550px;
     // max-height: 550px;
     // background-color: red;
+    @include mobile {
+        width: 100%;
+    }
     img {
         max-width: 90%;
         height: auto;
         // display: block; //去除圖片margin bottom 3px
+        @include mobile {
+            max-width: 100%;
+            margin-bottom: 8px;
+        }
     }
 }
 
 .subscribe {
     width: 100%;
     height: 300px;
+    padding: 0 15px;
     background: url(../images/index10.jpg) no-repeat;
+    @include mobile {
+        height: 600px;
+        background: url(../images/index10-mobile.jpg) no-repeat;
+    }
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     h3 {
         font-size: 1.5rem;
@@ -262,17 +331,19 @@
         margin-bottom: 20px;
     }
     .subscribe__inner {
-        width: 1100px;
-        padding: 0 15px;
-        // position: relative;
-        // left: -200px;
+        max-width: 1100px;
+        width: 100%;
+        // background-color: red;
+        margin: 0 auto;
+        // position: absolute;
+        // left: 0;
     }
     form {
         // background-color: red;
         display: flex;
     }
     input {
-        height: 40px;
+        max-height: 40px;
         padding: 10px;
         display: inline-block;
         border-radius: 5px 0 0 5px;
@@ -313,9 +384,13 @@
     .copyright {
         margin-left: 10px;
         color: #dbcbac;
+        font-size: 14px;
     }
     ul {
         display: flex;
+        @include mobile {
+            display: none;
+        }
         a {
             display: block;
             padding: 20px 10px;

@@ -186,7 +186,7 @@ img {
   margin-right: 5px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   .header .menu span {
     display: none;
   }
@@ -196,26 +196,41 @@ img {
   display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
   .header .menu em {
-    display: block;
+    display: inline-block;
+    margin: 0 auto;
+    width: 16px;
+    height: 16px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 15px;
+    font-size: 12px;
     color: white;
     background-color: red;
-    border-radius: 100%;
+    border-radius: 7px;
+    text-align: center;
   }
 }
 
-@media (max-width: 375px) {
-  .header .mobile-none {
+@media (max-width: 376px) {
+  .mobile-none {
     display: none;
   }
 }
 
+.mobile-show {
+  display: none;
+}
+
+@media (max-width: 376px) {
+  .mobile-show {
+    display: block;
+  }
+}
+
 .banner {
-  height: 500px;
+  height: 870px;
   background: url(../images/index1.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -232,11 +247,26 @@ img {
           justify-content: center;
 }
 
+@media (max-width: 376px) {
+  .banner {
+    height: 480px;
+    background-position: center center;
+  }
+}
+
 .banner .banner__text {
   position: absolute;
   right: 15%;
   width: 20%;
   color: white;
+}
+
+@media (max-width: 376px) {
+  .banner .banner__text {
+    padding: 0 15px;
+    width: 100%;
+    right: 0;
+  }
 }
 
 .banner .banner__text h2 {
@@ -272,7 +302,6 @@ img {
 }
 
 .shop-btn:hover {
-  width: 100%;
   -webkit-transition: .3s;
   transition: .3s;
   background-color: rgba(255, 255, 255, 0.1);
@@ -289,6 +318,7 @@ img {
   border: 2px solid black;
   font-size: 15px;
   font-weight: bold;
+  width: 100%;
 }
 
 .btn2:hover {
@@ -310,6 +340,17 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 376px) {
+  .product li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 .product li.row-reverse {
@@ -317,6 +358,15 @@ img {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+@media (max-width: 376px) {
+  .product li.row-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 .product .product__content {
@@ -337,9 +387,23 @@ img {
           align-items: center;
 }
 
+@media (max-width: 376px) {
+  .product .product__content {
+    max-width: 100%;
+  }
+}
+
 .product .product__content .content__inner {
   display: inline-block;
   max-width: 50%;
+}
+
+@media (max-width: 376px) {
+  .product .product__content .content__inner {
+    max-width: 100%;
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
 }
 
 .product .product__content .content__inner2 {
@@ -372,12 +436,24 @@ img {
   max-width: 50%;
 }
 
+@media (max-width: 376px) {
+  .product .product__img {
+    max-width: 100%;
+  }
+}
+
 .product .product__img img {
   display: block;
 }
 
 .product .double-height img {
   height: 1080px;
+}
+
+@media (max-width: 376px) {
+  .product .double-height img {
+    height: 680px;
+  }
 }
 
 .productList {
@@ -389,17 +465,45 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 376px) {
+  .productList ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .productList ul li {
-  margin: 50px 15px;
+  margin: 24px 15px;
+}
+
+@media (max-width: 376px) {
+  .productList ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .productList ul a {
   display: block;
   max-width: 350px;
+  width: 100%;
   height: auto;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .productList ul a.soldOut::before {
@@ -415,8 +519,8 @@ img {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.5rem;
-  width: calc(33.33333% - 40px);
-  max-width: 340px;
+  width: 100%;
+  height: 100%;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
@@ -444,26 +548,51 @@ img {
   margin-left: 15px;
 }
 
+.product__img2 {
+  width: 50%;
+}
+
+@media (max-width: 376px) {
+  .product__img2 {
+    width: 100%;
+  }
+}
+
 .product__img2 img {
   max-width: 90%;
   height: auto;
 }
 
+@media (max-width: 376px) {
+  .product__img2 img {
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
 .subscribe {
   width: 100%;
   height: 300px;
+  padding: 0 15px;
   background: url(../images/index10.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 376px) {
+  .subscribe {
+    height: 600px;
+    background: url(../images/index10-mobile.jpg) no-repeat;
+  }
 }
 
 .subscribe h3 {
@@ -474,8 +603,9 @@ img {
 }
 
 .subscribe .subscribe__inner {
-  width: 1100px;
-  padding: 0 15px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .subscribe form {
@@ -485,7 +615,7 @@ img {
 }
 
 .subscribe input {
-  height: 40px;
+  max-height: 40px;
   padding: 10px;
   display: inline-block;
   border-radius: 5px 0 0 5px;
@@ -554,12 +684,19 @@ img {
 .footer__inner .copyright {
   margin-left: 10px;
   color: #dbcbac;
+  font-size: 14px;
 }
 
 .footer__inner ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 376px) {
+  .footer__inner ul {
+    display: none;
+  }
 }
 
 .footer__inner ul a {
