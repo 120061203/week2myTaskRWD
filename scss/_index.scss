@@ -5,6 +5,41 @@
     // background-color: red;
 }
 
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mt-3 {
+    margin-top: 24px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.mb-3 {
+    margin-bottom: 24px;
+}
+
+.mb-52 {
+    margin-bottom: 52px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+// * {
+//     outline: 1px solid red;
+// }
 .header {
     display: flex;
     justify-content: space-between;
@@ -15,7 +50,9 @@
             display: block;
             // background-color: red;
             color: #8d8d8d;
-            padding: 10px 10px;
+            padding: 16px 10px;
+            font-size: 20px;
+            line-height: 30px;
             &:hover {
                 color: lighten(#8d8d8d, 20%);
             }
@@ -36,11 +73,12 @@
                 width: 16px;
                 height: 16px;
                 position: absolute;
-                top: 5px;
-                right: 15px;
+                top: 12px;
+                right: 64px;
                 font-size: 12px;
+                line-height: 16px;
                 color: white;
-                background-color: red;
+                background-color: #916000;
                 border-radius: 7px;
                 text-align: center;
             }
@@ -63,6 +101,7 @@
 
 .banner {
     height: 870px;
+    margin: 0 auto;
     background: url(../images/index1.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -71,14 +110,27 @@
         height: 480px;
         background-position: center center;
     }
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
     // align-items: flex-end;
+    .banner__container {
+        max-width: 1140px;
+        padding: 0 15px;
+        margin: 0 auto;
+        height: 870px;
+        // background-color: blue;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        @include mobile {
+            height: 480px;
+        }
+    }
     .banner__text {
-        position: absolute;
-        right: 15%;
-        width: 20%;
+        // position: absolute;
+        // right: 0px;
+        max-width: 445px;
         color: white;
         @include mobile {
             padding: 0 15px;
@@ -86,12 +138,22 @@
             right: 0;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 40px;
+            line-height: 60px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            @include mobile {
+                font-size: 32px;
+                line-height: 48px;
+            }
         }
         p {
-            line-height: 1.2;
+            font-size: 24px;
+            line-height: 36px;
+            @include mobile {
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
     }
 }
@@ -100,7 +162,7 @@
     // background-color: red;
     height: 40px;
     width: 90%;
-    margin: 0 auto;
+    // margin: 0 auto;
     margin-top: 20px;
     border-radius: 20px;
     text-align: center;
@@ -110,6 +172,9 @@
     justify-content: center;
     align-items: center;
     transition: .3s;
+    @include mobile {
+        min-width: 100%;
+    }
     &:hover {
         // width: 100%;
         transition: .3s;
@@ -170,7 +235,7 @@
         }
         .content__inner {
             display: inline-block;
-            max-width: 50%;
+            max-width: 66.66%;
             // background-color: red;
             @include mobile {
                 max-width: 100%;
@@ -183,15 +248,30 @@
             width: 90%;
         }
         .product__title {
-            font-size: 1.3rem;
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product__title2 {
+            font-size: 24px;
+            line-height: 36px;
             font-weight: bold;
             margin-bottom: 10px;
         }
         .product__introduce {
             // width: 50%;
-            color: #3f3f3f;
-            line-height: 1.2;
-            margin-bottom: 30px;
+            color: #000;
+            line-height: 30px;
+            font-size: 20px;
+            // margin-bottom: 30px;
+        }
+        .product__introduce2 {
+            // width: 50%;
+            color: #000;
+            line-height: 24px;
+            font-size: 16px;
+            // margin-bottom: 30px;
         }
         .seeMore {
             color: #c1a774;
@@ -200,6 +280,60 @@
                 color: lighten(#c1a774, 20%);
             }
         }
+    }
+    .product__content2 {
+        max-width: 33.33%;
+        height: auto;
+        // background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include mobile {
+            max-width: 100%;
+        }
+        .content__inner {
+            display: inline-block;
+            max-width: 66.66%;
+            // background-color: red;
+            @include mobile {
+                max-width: 100%;
+                margin-top: 8px;
+                margin-bottom: 32px;
+            }
+        }
+        .content__inner2 {
+            display: inline-block;
+            width: 100%;
+        }
+        .product__title {
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product__introduce {
+            // width: 50%;
+            color: #000;
+            line-height: 30px;
+            font-size: 20px;
+            // margin-bottom: 30px;
+        }
+        .seeMore {
+            color: #c1a774;
+            font-weight: bold;
+            &:hover {
+                color: lighten(#c1a774, 20%);
+            }
+        }
+    }
+    .product__introduce2 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .p-big {
+        font-size: 20px;
+        line-height: 30px;
     }
     .product__img {
         max-width: 50%;
@@ -228,17 +362,18 @@
     background-color: #e0e0e0;
     ul {
         display: flex;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 32px;
+        padding-bottom: 36px;
         max-width: 100%;
         margin: 0 auto;
         // background-color: red;
         justify-content: space-between;
         @include mobile {
             flex-wrap: wrap;
+            padding-bottom: 0;
         }
         li {
-            margin: 24px 15px;
+            // margin: 24px 15px;
             // background-color: red;
             @include mobile {
                 display: flex;
@@ -263,7 +398,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 24px;
+            line-height: 36px;
             width: 100%;
             height: 100%;
             color: white;
@@ -272,35 +408,51 @@
         }
     }
     .title {
-        font-size: 1.5rem;
+        font-size: 24px;
+        line-height: 36px;
         font-weight: bold;
         margin-bottom: 10px;
+        @include mobile {
+            margin-bottom: 0;
+        }
     }
     .name {
-        font-size: 1.1rem;
-        color: #898989;
-        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000;
+        margin-bottom: 16px;
+        @include mobile {
+            margin-bottom: 4px;
+        }
     }
     .price {
-        font-size: 1.2em;
-        color: #898989;
+        font-size: 16px;
+        color: #000;
+        @include mobile {
+            margin-bottom: 32px;
+        }
         span {
+            color: #8D8D8D;
             text-decoration: line-through;
-            margin-left: 15px;
+            margin-left: 8px;
         }
     }
 }
 
 .product__img2 {
-    width: 50%;
+    // width: 50%;
+    max-width: 66.6666%;
+    width: 100%;
+    // display: none;
     // max-width: 550px;
     // max-height: 550px;
     // background-color: red;
     @include mobile {
+        max-width: 100%;
         width: 100%;
     }
     img {
-        max-width: 90%;
+        max-width: 95%;
         height: auto;
         // display: block; //去除圖片margin bottom 3px
         @include mobile {
@@ -311,40 +463,42 @@
 }
 
 .subscribe {
-    width: 100%;
-    height: 300px;
-    padding: 0 15px;
+    max-width: 100%;
+    height: 600px;
+    // padding: 0 15px;
     background: url(../images/index10.jpg) no-repeat;
     @include mobile {
-        height: 600px;
+        // height: 600px;
         background: url(../images/index10-mobile.jpg) no-repeat;
     }
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
     h3 {
-        font-size: 1.5rem;
-        line-height: 1.2;
+        font-size: 32px;
+        line-height: 48px;
         color: #8d8d8d;
         margin-bottom: 20px;
     }
     .subscribe__inner {
-        max-width: 1100px;
+        max-width: 350px;
         width: 100%;
         // background-color: red;
-        margin: 0 auto;
-        // position: absolute;
-        // left: 0;
+        // margin: 0 auto;
+        position: relative;
+        top: 312px;
     }
     form {
         // background-color: red;
         display: flex;
     }
     input {
-        max-height: 40px;
-        padding: 10px;
+        box-sizing: border-box;
+        width: 220px;
+        height: 60px;
+        padding: 20px 10px;
         display: inline-block;
         border-radius: 5px 0 0 5px;
         border: 2px solid #916000;
@@ -352,10 +506,14 @@
             outline: none;
             &::placeholder {
                 color: #ccc;
+                font-size: 16px;
+                line-height: 24px;
             }
         }
     }
     input[type="submit"] {
+        height: 60px;
+        width: 130px;
         border-radius: 0 5px 5px 0;
         color: white;
         background-color: #916000;
